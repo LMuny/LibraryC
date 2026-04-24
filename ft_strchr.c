@@ -1,31 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmuny <lmuny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 13:27:58 by lmuny             #+#    #+#             */
-/*   Updated: 2026/04/24 10:55:51 by lmuny            ###   ########.fr       */
+/*   Created: 2026/04/22 08:38:03 by lmuny             #+#    #+#             */
+/*   Updated: 2026/04/24 11:55:56 by lmuny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	*p1;
-	unsigned char	*p2;
-	size_t			i;
+	int	i;
 
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
 	i = 0;
-	while (i > n)
+	while (s[i])
 	{
-		if (p1[i] != p2[i])
-			return (*p1 - *p2);
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
 		i++;
 	}
+	if ((char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
+}
+/*
+#include <stdio.h>
+
+int	main(int ac, char **av)
+{
+	char	*result;
+
+	if (ac != 3)
+	{
+		printf("Usage: ./a.out <string> <char>\n");
+		return (1);
+	}
+	result = ft_strchr(av[1], av[2][0]);
+	if (result)
+		printf("%s\n", result);
+	else
+		printf("Char '%c' not found\n", av[2][0]);
 	return (0);
 }
+ */

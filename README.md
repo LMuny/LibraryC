@@ -17,11 +17,11 @@ Library containing the fonction for c
 
 8  -  ft_tolower     : Turns a uppercase char in a lowercase char
 
-9  -  ft_memset      : Fills every bits of s in the range of n with a the value of c 
+9  -  ft_memset      : Fills every bits of s in the range of n with a the value of c
 
 10 -  ft_bzero       : Fills every bits of s in the range of n with the value "0"
 
-11 -  ft_memcmp      : Compares the first n bytes of two memory areas and returning the difference of the first differing bytes or 0  
+11 -  ft_memcmp      : Compares the first n bytes of two memory areas and returning the difference of the first differing bytes or 0
                        if identical
 
 12 -  ft_strncmp     : Compares two different strings until a char is different or reach the limit set by "n" or reach the end of a string
@@ -29,7 +29,7 @@ Library containing the fonction for c
                      : Returns <0  if s1 is smaller than s2
                      : Returns  0> if s1 is bigger than s2
 
-13 - ft_strchr       :
+13 - ft_strchr       : Returns a pointer to the first occurrence of the character c in the string s.
 
 14 - ft_strrchr      :
 
@@ -47,7 +47,9 @@ Library containing the fonction for c
 
 21 - ft_strnstr      :
 
-22 - ft_strdup       :
+22 - ft_strdup       : The function returns a pointer to a new string which is a duplicate of the
+                     : string s.  Memory for the new string is obtained with malloc(3), and can be
+                     : freed with free(3).
 
 23 - ft_calloc       :
 
@@ -64,13 +66,20 @@ Library containing the fonction for c
 
 29 - ft_striteri     :
 
-30 - ft_substr       :
-  
+30 - ft_substr       : Allocates (with malloc(3)) and returns a substring from the string ’s’.
+                     : The substring begins at index ’start’ and is of
+                     : maximum size ’len’.
+
 31 - ft_strjoin      :
 
-32 - ft_strtrim      :
+32 - ft_strtrim      : Allocates (with malloc(3)) and returns an array of
+                     : strings obtained by splitting ’s’ using the : : : character ’c’ as a delimiter. The array musT
+                     : end with a NULL pointer.
 
-33 - ft_itoa         :
+33 - ft_itoa         : Allocates (with malloc(3)) and returns a
+                     : string representing the integer received as aN
+                     : argument.
+                     : Negative numbers must be handled.
 
 34 - ft_split        :
 

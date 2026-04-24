@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmuny <lmuny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 13:21:57 by lmuny             #+#    #+#             */
-/*   Updated: 2026/04/24 11:56:33 by lmuny            ###   ########.fr       */
+/*   Created: 2026/04/21 16:01:52 by lmuny             #+#    #+#             */
+/*   Updated: 2026/04/24 11:57:02 by lmuny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memchr(void *s, int c, size_t n)
 {
+	size_t			i;
 	unsigned char	*ptr;
 
+	i = 0;
 	ptr = (unsigned char *)s;
-	while (n > 0)
+	while (i < n)
 	{
-		*ptr = 0;
-		ptr++;
-		n--;
+		if (ptr[i] == (unsigned char)c)
+			return ((void *)&ptr[i]);
+		i++;
 	}
+	return (NULL);
 }

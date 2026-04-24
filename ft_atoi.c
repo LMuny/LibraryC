@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmuny <lmuny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 13:21:57 by lmuny             #+#    #+#             */
-/*   Updated: 2026/04/24 11:56:33 by lmuny            ###   ########.fr       */
+/*   Created: 2026/04/20 13:11:44 by lmuny             #+#    #+#             */
+/*   Updated: 2026/04/24 11:55:51 by lmuny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
+int	ft_atoi(char *s)
 {
-	unsigned char	*ptr;
+	int	i;
+	int	sign;
+	int	result;
 
-	ptr = (unsigned char *)s;
-	while (n > 0)
+	i = 0;
+	sign = 1;
+	result = 0;
+	while (s[i] == ' ' && (s[i] >= 9 && s[i] <= 13))
+		i++;
+	if (s[i] == '+' || s[i] == '-')
 	{
-		*ptr = 0;
-		ptr++;
-		n--;
+		if (s[i] == '-')
+			sign = -1;
+		i++;
 	}
+	while (s[i] >= '0' && s[i] <= '9')
+		result = result * 10 + (s[i++] - '0');
+	return (result * sign);
 }

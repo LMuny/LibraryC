@@ -1,26 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmuny <lmuny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/20 13:21:57 by lmuny             #+#    #+#             */
-/*   Updated: 2026/04/24 11:56:33 by lmuny            ###   ########.fr       */
+/*   Created: 2026/04/24 14:18:52 by lmuny             #+#    #+#             */
+/*   Updated: 2026/04/24 15:02:22 by lmuny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+static void	to_upper(unsigned int i, char *c)
 {
-	unsigned char	*ptr;
+	(void)i;
+	if (*c >= 'a' && *c <= 'z')
+		*c -= 32;
+}
 
-	ptr = (unsigned char *)s;
-	while (n > 0)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	size_t	i;
+
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-		*ptr = 0;
-		ptr++;
-		n--;
+		f(i, &s[i]);
+		i++;
 	}
+}
+
+int	main(void)
+{
+	char	test[] = "HelloWorld(\"printf\")";
+
+	printf("Source: %s\n", test);
+	ft_striteri(test, to_upper);
+	printf("Result: %s\n", test);
+	return (0);
 }
