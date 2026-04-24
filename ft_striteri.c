@@ -6,18 +6,20 @@
 /*   By: lmuny <lmuny@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 14:18:52 by lmuny             #+#    #+#             */
-/*   Updated: 2026/04/24 15:02:22 by lmuny            ###   ########.fr       */
+/*   Updated: 2026/04/24 16:44:56 by lmuny            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
 static void	to_upper(unsigned int i, char *c)
 {
 	(void)i;
 	if (*c >= 'a' && *c <= 'z')
 		*c -= 32;
 }
+*/
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
@@ -32,7 +34,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
-
+/*
 int	main(void)
 {
 	char	test[] = "HelloWorld(\"printf\")";
@@ -42,3 +44,5 @@ int	main(void)
 	printf("Result: %s\n", test);
 	return (0);
 }
+
+ */
