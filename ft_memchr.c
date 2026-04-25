@@ -27,3 +27,11 @@ void	*ft_memchr(void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+/*
+int	main(int ac, char **av)
+{
+	if (ac == 4)
+		ft_memchr(av[1], ft_atoi(av[2]), ft_atoi(av[3]));
+	return (0);
+}
+*/

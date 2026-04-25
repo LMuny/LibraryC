@@ -21,11 +21,19 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	p1 = (unsigned char *)s1;
 	p2 = (unsigned char *)s2;
 	i = 0;
-	while (i > n)
+	while (i < n)
 	{
 		if (p1[i] != p2[i])
-			return (*p1 - *p2);
+			return (p1[i] - p2[i]);
 		i++;
 	}
 	return (0);
 }
+/*
+int	main(int ac, char **av)
+{
+	if (ac == 4)
+		ft_memcmp(av[1], av[2], ft_atoi(av[3]));
+	return (0);
+}
+*/

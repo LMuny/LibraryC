@@ -28,3 +28,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+/*
+int	main(int ac, char **av)
+{
+	if (ac == 4)
+		ft_memcpy(av[1], av[2], ft_atoi(av[3]));
+	return (0);
+}
+*/

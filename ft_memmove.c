@@ -23,7 +23,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	{
 		while (n)
 		{
-			d[n] = s[n];
+			d[n - 1] = s[n - 1];
 			n--;
 		}
 	}
@@ -35,5 +35,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			n--;
 		}
 	}
-	return (d);
+	return (dest);
 }
+/*
+int	main(int ac, char **av)
+{
+	if (ac == 4)
+		ft_memmove(av[1], av[2], ft_atoi(av[3]));
+	return (0);
+}
+*/

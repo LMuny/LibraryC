@@ -24,29 +24,4 @@ void	*ft_calloc(size_t slots, size_t bitsize)
 	ft_bzero(memzone, slots * bitsize);
 	return (memzone);
 }
-/*
-#define INT_NUMBER 12
-#include <assert.h>
-#include <stdio.h>
 
-int	main(void)
-{
-	int	i;
-	int	*pointer;
-
-	pointer = (int *)ft_calloc(INT_NUMBER, sizeof(int));
-	if(!pointer)
-		return (0);
-	for (i = 0; i < INT_NUMBER - 1; i++)
-	{
-		pointer[i] = i;
-	}
-	for (i = 0; i < INT_NUMBER; i++)
-	{
-		printf("%d ", pointer[i]);
-	}
-	printf("\n");
-	free(pointer);
-	return (0);
-}
- */

@@ -24,3 +24,12 @@ void	ft_bzero(void *s, size_t n)
 		n--;
 	}
 }
+
+/*
+int	main(int ac, char **av)
+{
+	if (ac == 3)
+		ft_bzero(av[1], ft_atoi(av[2]));
+	return (0);
+}
+*/

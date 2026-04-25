@@ -23,11 +23,10 @@ void	ft_putendl_fd(char *s, int fd)
 	return ;
 }
 /*
-int	main(void)
+int	main(int ac, char **av)
 {
-	char	*test;
-
-	test = "Hello 42!";
-	ft_putendl_fd(test, 2);
+	if (ac == 3)
+		ft_putendl_fd(av[1], ft_atoi(av[2]));
+	return (0);
 }
 */

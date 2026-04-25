@@ -35,3 +35,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }
+/*
+int	main(int ac, char **av)
+{
+	if (ac == 4)
+		printf("%zu\n", ft_strlcat(av[1], av[2], ft_atoi(av[3])));
+	return (0);
+}
+*/
